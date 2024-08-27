@@ -80,6 +80,8 @@ function validateEmail($input) {
     //
     //VALIDATE IF EMAIL IS CORRECT FORMAT USING filter_var()
 
+    
+    
     if (!empty($input)) {
         if (is_string($input)) {
             if (filter_var($input, FILTER_VALIDATE_EMAIL)) {
