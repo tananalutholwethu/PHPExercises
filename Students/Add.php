@@ -5,7 +5,7 @@
     <body>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) ?>" method="post">
             <a href="index.php">Logout</a>
-        <h1>ADD STUDENTS</h1><br>
+            <h1>ADD STUDENTS</h1><br><hr><br>
         
             <label>Student Name: </label><br>
             <input type="text" name="name" placeholder="First name"><br><br>
@@ -15,7 +15,7 @@
             <input type="number" name="age" placeholder="Student Age"><br><br>
             <label>Grade: </label><br>
             <input type="text" name="grade" placeholder="Grade 10 - 12"><br><br> <!--Validate using reg_ex matching-->
-            <input type="submit" name="add" value="Add">
+            <input type="submit" style="width: 100px" name="view" value="Add">&nbsp<input style="width: 100px" type="submit" name="add" value="View Students">
             <br>
         </form> 
     </body>
