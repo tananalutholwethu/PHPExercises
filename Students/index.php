@@ -1,4 +1,5 @@
 <?php 
+include "Database.php";
 if(isset($_POST['login']))//If Register button is clicked
 {
     header('Location: /PHPExercises/Students/Login.php');//Redirect to this page

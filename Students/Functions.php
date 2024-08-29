@@ -65,12 +65,46 @@ function ValidatePassword($input) {
 
 //VALIDATE AGE
 function ValidateNumber($input) {
-    
+    if(!empty($input)){
+        $input=SanitizeInput($input);
+        $input=(int)$input;
+       if(is_int($input)){
+           
+           
+           if($input<15||$input>23){
+               echo "<span style='color: red'>Student age must be between 15-23!</span>";
+           }else{
+               return $input;
+           }
+       } else{
+           echo "<span style='color: red'>Age must be a number between 15-23!</span>";
+       }
+    }else {
+        print "<span style='color: red'>Required!</span><br>";
+    }
 }
 
 //VALIDATE GRADE...INPUT format MUST BE Grade 10-12
 function ValidateGrade($input) {
     
+    if(!empty($input)){
+        //SANITIZE USER INPUT
+        $input=SanitizeInput($input);
+        
+        //CONVERT USER CASE TO FORMAT CASE
+        $input= strtolower($input);//CONVERT ALL TO LOWER CASE
+        $input= strtoupper($input[0]).substr($input,1);
+        //
+        //VALIDATE  ALLOWED GRADE FORMAT
+        if(preg_match("/^Grade\s(10|11|12)$/", $input)){
+            return $input;
+        }
+        else{
+            echo "<span style='color: red'>$input  is an invalid format!";
+        }
+    }else {
+        print "<span style='color: red'>Grade can't be empty!</span><br>";
+    }
 }
 
 //SANITIZE AND TRIM UNNECESSARY WHITE SPACE ON USER INPUT
@@ -89,3 +123,4 @@ function GenerateUsername($name,$surname){
 }
 
 ?>
+

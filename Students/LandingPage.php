@@ -1,4 +1,5 @@
 <?php 
+include "Database.php";
 session_start(); //Start all sessions we stored on the Register file 
 if(isset($_GET['logout'])===true){//GET BECAUSE ANCHORS ONLY USE GET METHOD
 //    session_unset();
